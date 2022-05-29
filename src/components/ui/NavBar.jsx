@@ -1,9 +1,12 @@
 import React from 'react'
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useNavigate} from "react-router-dom";
 import icon from "../../assets/img/superhero1.png"
 
 export const NavBar = () => {
-  const fnHandlerLogout = () => {}
+  const navigate = useNavigate();
+  const fnHandlerLogout = () => {
+      navigate("/login");
+  }
   return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
