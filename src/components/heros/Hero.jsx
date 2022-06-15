@@ -7,7 +7,7 @@ const Hero = () => {
     let navigate = useNavigate();
 
     const hero = useMemo(()=>fnGetHerosById(heroCode), [heroCode])
-    if(!hero){return navigate('/dc',{ replace: true })}
+    if(!hero){return navigate('/',{ replace: true })}
         const {id, superhero, publisher, alter_ego, first_appearance, characters, color, color2} = hero;
 
     const handlerBack = () => {
