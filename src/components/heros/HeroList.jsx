@@ -1,9 +1,9 @@
 import React, {useMemo} from 'react';
-import {fnGetHoerosByPublisher} from "../../helpers/HerosHelper";
+import {fnGetHerosByPublisher} from "../../helpers/HerosHelper";
 import HeroCard from "./HeroCard";
 
 const HeroList =({publisher}) => {
-    const heroes = useMemo(()=> fnGetHoerosByPublisher(publisher),[publisher]);
+    const heroes = useMemo(()=> fnGetHerosByPublisher(publisher),[publisher]);
     return (
         <div className={'container pt-5 d-flex flex-wrap'}>
                 {heroes.map((hero) =>

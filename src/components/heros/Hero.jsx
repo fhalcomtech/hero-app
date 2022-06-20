@@ -10,10 +10,7 @@ const Hero = () => {
     if(!hero){return navigate('/',{ replace: true })}
         const {id, superhero, publisher, alter_ego, first_appearance, characters, color, color2} = hero;
 
-    const handlerBack = () => {
-        const goTo = id.split('-')[0];
-        navigate(`/${goTo}`);
-    }
+    const handlerBack = () => {navigate(-1,{replace:true});}
 
     return (
         <div className="card" style={{backgroundColor: `${color}`, color: `${color2}`, maxWidth: '540px', margin:'2rem auto 0', boxShadow:`0px 8px 8px -5px ${color}`}}>
