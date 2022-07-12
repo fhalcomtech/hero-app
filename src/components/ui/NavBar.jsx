@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Link, NavLink, useNavigate} from "react-router-dom";
 import icon from "../../assets/img/superhero1.png"
+import {AuthContext} from "../../auth/context/AuthContext";
 
 export const NavBar = () => {
   const navigate = useNavigate();
+  const {authState} = useContext(AuthContext);
+  console.log(authState);
   const fnHandlerLogout = () => {
       navigate("/login");
   }
@@ -20,7 +23,7 @@ export const NavBar = () => {
                   </div>
               </div>
               <div className="d-flex">
-                <span className="nav-link text-primary">Fidel</span>
+                <span className="nav-link text-primary">{authState["user"]?authState.user.username:""}</span>
                 <button className="nav-link btn btn-outline-secondary text-white" onClick={fnHandlerLogout}>Logout</button>
               </div>
           </div>
