@@ -8,7 +8,7 @@ export const LoginScreen = () => {
 
   const handlerLogin = () => {
       login("fhalcom.dev@gmail.com", "Lascano");
-    navigate("/marvel",{replace:true})
+      navigate("/marvel",{replace:true})
   }
   return (
     <div className={`container pt-2`}>

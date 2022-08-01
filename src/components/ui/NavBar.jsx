@@ -5,10 +5,10 @@ import {AuthContext} from "../../auth/context/AuthContext";
 
 export const NavBar = () => {
   const navigate = useNavigate();
-  const {authState} = useContext(AuthContext);
-  console.log(authState);
+  const {authState, logout} = useContext(AuthContext);
   const fnHandlerLogout = () => {
       navigate("/login");
+      logout();
   }
   return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
