@@ -7,8 +7,9 @@ export const LoginScreen = () => {
     const navigate = useNavigate();
 
   const handlerLogin = () => {
+      const lastVisited = localStorage.getItem('lastVisited')
       login("fhalcom.dev@gmail.com", "Lascano");
-      navigate("/marvel",{replace:true})
+      navigate(lastVisited || "/marvel",{replace:true})
   }
   return (
     <div className={`container pt-2`}>
